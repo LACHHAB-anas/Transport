@@ -289,18 +289,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="25dp">
 
         <Button
             android:id="@+id/loginButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@drawable/button_states"
             android:onClick="validerInfo"
             android:text="Valider"
             android:textAllCaps="false"
             android:textColor="#fff"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:backgroundTint="@color/fui_bgTwitter"/>
     </LinearLayout>
 
 
