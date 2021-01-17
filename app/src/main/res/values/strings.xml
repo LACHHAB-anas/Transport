@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Transport</string>
+    <string-array name="spinner">
+        <item>Taxi</item>
+        <item>Bus</item>
+        <item>Tram</item>
+        <item>Co-voiturage</item>
+    </string-array>
+</resources>
