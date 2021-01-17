@@ -9,6 +9,11 @@
     android:screenOrientation="portrait"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="154dp"
+        android:src="@drawable/ic_baseline_time_to_leave_24" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:text="Nom:"
@@ -35,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:ems="10"
@@ -156,7 +161,7 @@
         tools:layout_editor_absoluteY="282dp" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
@@ -169,16 +174,16 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:text="Préférence de transport:"
-            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="18sp"
+            android:textStyle="bold"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="7dp"
             tools:layout_editor_absoluteY="343dp" />
 
         <Spinner
             android:id="@+id/spinner"
-            android:layout_width="190dp"
+            android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
@@ -188,8 +193,6 @@
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="180dp"
             tools:layout_editor_absoluteY="332dp" />
-
-
 
 
     </LinearLayout>
@@ -221,7 +224,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="6dp"
             android:text="Min:"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -237,7 +240,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="6dp"
             android:ems="10"
             android:inputType="number"
             android:textColor="@color/white"
@@ -253,7 +256,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="6dp"
             android:text="Max:"
             android:textStyle="bold"
             android:textColor="@color/white"
@@ -269,7 +272,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="6dp"
             android:ems="10"
             android:inputType="number"
             android:textColor="@color/white"
@@ -286,7 +289,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="30dp">
 
         <Button
             android:id="@+id/loginButton"
