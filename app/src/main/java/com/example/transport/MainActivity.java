@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         } else {
-            Toast.makeText(MainActivity.this, "Veuillez remplir toute les informations", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, "veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
         }
 
     }
