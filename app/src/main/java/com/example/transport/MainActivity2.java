@@ -102,7 +102,9 @@ public class MainActivity2 extends AppCompatActivity {
     public void confirmerInfo(View view) {
 
         if(stationDepart.getSelectedItem() != stationArrivee.getSelectedItem()) {
-            Toast.makeText(MainActivity2.this, "De "+ stationDepart.getSelectedItem() + " à "+ stationArrivee.getSelectedItem()+" §§ Bon route  !! "  , Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity2.this, "De "+ stationDepart.getSelectedItem() + " à "+ stationArrivee.getSelectedItem() , Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity2.this, " §§ Bonne route  !! "  , Toast.LENGTH_SHORT).show();
+
         } else {
             Toast.makeText(MainActivity2.this, "vous êtes deja à " + stationDepart.getSelectedItem() + " !" , Toast.LENGTH_SHORT).show();
         }
