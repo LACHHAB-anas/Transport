@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -31,7 +32,7 @@ import static java.lang.String.*;
 public class MainActivity extends AppCompatActivity {
 
     private EditText nom, age, minPrix, maxPrix;
-    private RadioGroup genre;
+    private RadioButton genre;
     private Switch handicap;
     private Spinner preferenceDeTransport;
 
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         age = findViewById(R.id.age);
         minPrix = findViewById(R.id.minprix);
         maxPrix = findViewById(R.id.maxprix);
-        genre = findViewById(R.id.genre);
+        genre = findViewById(R.id.masculin);
         handicap = findViewById(R.id.handicap);
         preferenceDeTransport = findViewById(R.id.spinner);
 
@@ -81,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             Map<String, Object> user = new HashMap<>();
             user.put("nom", nom.getText().toString().trim());
             user.put("age", age.getText().toString().trim());
-            user.put("genre", genre.getCheckedRadioButtonId());
+            user.put("genre", genre.isChecked() ? "Masculin" : "Féminin");
             user.put("handicap", handicap.isChecked());
             user.put("preferenceDeTransport", preferenceDeTransport.getSelectedItem());
             user.put("minPrix", Integer.valueOf(minPrix.getText().toString().trim()));
