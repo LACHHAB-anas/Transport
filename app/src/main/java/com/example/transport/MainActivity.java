@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
                             Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                             intent.putExtra("preferenceDeTransport", valueOf(preferenceDeTransport.getSelectedItemPosition()));
                             startActivity(intent);
-                            finish();
+
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {
