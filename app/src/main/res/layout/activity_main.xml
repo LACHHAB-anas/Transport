@@ -60,7 +60,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/Station_arrivee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -98,7 +98,7 @@
 
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/Station_arrivee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -243,6 +243,7 @@
             android:layout_marginBottom="6dp"
             android:ems="10"
             android:inputType="number"
+            android:text="0"
             android:textColor="@color/white"
             android:textSize="18sp"
             tools:ignore="MissingConstraints"
@@ -275,6 +276,7 @@
             android:layout_marginBottom="6dp"
             android:ems="10"
             android:inputType="number"
+            android:text="0"
             android:textColor="@color/white"
             android:textSize="18sp"
             tools:ignore="MissingConstraints"
@@ -292,7 +294,7 @@
         android:layout_marginTop="25dp">
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/validerButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_states"

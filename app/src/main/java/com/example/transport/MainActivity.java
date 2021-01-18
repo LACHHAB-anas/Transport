@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
@@ -23,6 +25,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+import static java.lang.Integer.parseInt;
+import static java.lang.String.*;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText nom, age, minPrix, maxPrix;
@@ -34,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     //firebase
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    public void validerInfo(View view) {
-
+    @Override
+    protected void onStart() {
+        super.onStart();
 
         nom = findViewById(R.id.nom);
         age = findViewById(R.id.age);
@@ -53,7 +60,19 @@ public class MainActivity extends AppCompatActivity {
         genre = findViewById(R.id.genre);
         handicap = findViewById(R.id.handicap);
         preferenceDeTransport = findViewById(R.id.spinner);
-        if (nom.getText().length() != 0 ) {
+
+
+    }
+
+    public void validerInfo(View view) {
+
+        if(parseInt(valueOf(minPrix.getText())) > parseInt(valueOf(maxPrix.getText()))){
+            Toast.makeText(MainActivity.this, "Prix Min > Prix Min !!" , Toast.LENGTH_SHORT).show();
+
+        }
+
+
+        else if (nom.getText().length() != 0 && minPrix.getText().length() != 0 && maxPrix.getText().length() != 0) {
             loader = new ProgressDialog(this);
             loader.setMessage("Enregistrement des données...");
             loader.setCanceledOnTouchOutside(false);
@@ -78,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             loader.dismiss();
                             Toast.makeText(MainActivity.this, "Opération reussite !", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                            intent.putExtra("preferenceDeTransport", valueOf(preferenceDeTransport.getSelectedItemPosition()));
                             startActivity(intent);
                             finish();
                         }
