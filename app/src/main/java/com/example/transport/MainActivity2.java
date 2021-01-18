@@ -20,6 +20,8 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -33,7 +35,9 @@ public class MainActivity2 extends AppCompatActivity {
     private Spinner stationArrivee ;
     private Spinner preferenceDeTransport;
 
-    String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
+
+
+
 
     //connect to firebase :
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -52,13 +56,24 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        String currentTime = new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date());
         ArrayList<String> list  = new ArrayList<>()  ;
         ArrayList<String> listArrivee = new ArrayList<>();
         stationDepart = findViewById(R.id.stationDepart);
         stationArrivee = findViewById(R.id.stationArrivee);
 
+        Calendar cal = Calendar.getInstance();
+
+
+        int hour = cal.get(Calendar.HOUR_OF_DAY) ;
+        int min = cal.get(Calendar.MINUTE);
+
+
+
         heureDepart = findViewById(R.id.heureDepart) ;
-        heureDepart.setCurrentHour(Calendar.HOUR_OF_DAY);
+        heureDepart.setCurrentHour(hour);
+        heureDepart.setCurrentMinute(min);
+
         Intent intent = getIntent();
         preferenceDeTransport = findViewById(R.id.spinner);
         preferenceDeTransport.setSelection(Integer.parseInt(intent.getStringExtra("preferenceDeTransport")));
@@ -106,7 +121,7 @@ public class MainActivity2 extends AppCompatActivity {
             Toast.makeText(MainActivity2.this, " §§ Bonne route  !! "  , Toast.LENGTH_SHORT).show();
 
         } else {
-            Toast.makeText(MainActivity2.this, "vous êtes deja à " + stationDepart.getSelectedItem() + " !" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity2.this, "vous êtes déjà à " + stationDepart.getSelectedItem() + " !" , Toast.LENGTH_SHORT).show();
         }
 
 
